@@ -1,0 +1,16 @@
+Building and Installing
+
+  * Find your installed apxs, usually in /usr/bin, or /usr/local/apache/bin.
+
+  * Call apxs -c mod_ocaml.c to compile the module
+
+  * Copy the created file mod_ocaml.so to your apache libexec directory,
+    e. g. /usr/local/apache/libexec.
+
+  * Make two entries in your httpd.conf configuration file:
+
+    LoadModule mod_ocaml mod_ocaml.so
+    AddHandler ocaml-parsed .ocml
+
+  * Restart your apache web server. Now it is ready to process your
+    OCML-files.
